@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merciado Amusement Park | Seth Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+:root{--red:#ff2e2e;--yellow:#ffcc00;--blue:#0a1931;--bg:#fffaf0}
+body{background:var(--bg)}
+header{position:sticky;top:0;z-index:999;background:var(--blue);padding:14px 5%;display:flex;justify-content:space-between;align-items:center;color:#fff}
+.logo{font-size:26px;font-weight:800;color:var(--yellow)}.logo span{color:#fff}
+nav a{color:#fff;text-decoration:none;margin-left:15px;font-weight:600;font-size:14px}nav a:hover{color:var(--yellow)}
+.hero{height:90vh;background:linear-gradient(rgba(10,25,49,0.8),rgba(0,0,0,0.4)),url('https://images.unsplash.com/photo-1513889961551-628c1e5e2ee5');background-size:cover;background-position:center;display:flex;align-items:center;padding:0 5%;color:#fff}
+.hero h1{font-size:52px;line-height:1.1}.hero h1 span{color:var(--yellow)}
+.btn{background:var(--red);color:#fff;padding:12px 28px;border-radius:30px;border:none;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;margin-top:12px}
+.btn-yellow{background:var(--yellow);color:var(--blue);margin-left:10px}
+.section{padding:70px 5%}.title{text-align:center;font-size:38px;color:var(--blue)}.sub{text-align:center;color:#666;margin-bottom:35px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:.3s}.card:hover{transform:translateY(-6px)}
+.card img{width:100%;height:180px;object-fit:cover}.info{padding:20px}.info h3{color:var(--blue)}
+.price-wrap{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;padding:14px}td{padding:14px;text-align:center;border-bottom:1px solid #eee}
+tr.highlight td{background:#fff6cc;font-weight:700}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}.gallery img{width:100%;height:180px;object-fit:cover;border-radius:14px}
+.form-box{background:#fff;padding:25px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.form-box input,.form-box select,.form-box textarea{width:100%;padding:11px;margin:7px 0;border:1px solid #ccc;border-radius:8px}
+footer{background:var(--blue);color:#fff;padding:40px 5% 20px;margin-top:30px}.foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}footer a{color:var(--yellow);text-decoration:none}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;justify-content:center;align-items:center;z-index:1000}.modal.active{display:flex}
+.modal-box{background:#fff;width:90%;max-width:420px;padding:25px;border-radius:15px;position:relative}
+.close{position:absolute;right:12px;top:8px;font-size:22px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">MERCIADO <span>PARK</span></div>
+<nav>
+<a href="#home">Home</a>
+<a href="#zones">Zones</a>
+<a href="#tickets">Tickets</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#" onclick="openM('acc')" style="color:var(--yellow)">Sign Up</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div>
+<h1>Welcome To<br><span>Merciado Amusement Park</span></h1>
+<p>By Seth Group | 45 Acre Land | 5 Years Development | Nation Pride</p>
+<p style="margin-top:8px">Ab line mein lagne ki zarurat nahi, online ticket book karo!</p>
+<a href="#tickets" class="btn">Book Ticket Now</a>
+<a href="#zones" class="btn btn-yellow">Explore Zones</a>
+</div>
+</section>
+
+<section class="section" id="zones">
+<h2 class="title">Different Zones & Attractions</h2>
+<p class="sub">Restaurant, Attractions, Entertainment sab kuch</p>
+<div class="cards">
+<div class="card"><img src="https://images.unsplash.com/photo-1505993597083-3bd19fb75e57"><div class="info"><h3>Adventure Zone</h3><p>Roller Coaster, Zip Line, Bungee - Full Adventure</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635"><div class="info"><h3>Water World</h3><p>Wave Pool, Aqua Loop, Lazy River</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1575783970733-1aaedde1db74"><div class="info"><h3>Kids Kingdom</h3><p>Mini Train, Carousel, Fun House</p></div></div>
+<div class="card"><div class="info"><h3>Food Court & Restaurant</h3><p>Fast Food, Desi, Chinese, Italian - 20+ Stalls</p></div></div>
+<div class="card"><div class="info"><h3>Live Entertainment</h3><p>Magic Show, Musical Night, Clown Show - Daily 7PM</p></div></div>
+<div class="card"><div class="info"><h3>Shopping Arena</h3><p>Toys, T-Shirts, Souvenirs</p></div></div>
+</div>
+</section>
+
+<section class="section" id="tickets" style="background:#fff">
+<h2 class="title">Tickets & Prices</h2>
+<p class="sub">Weekday sasta, Weekend thoda mehenga, Family Pack mein faida</p>
+<div class="price-wrap">
+<table>
+<tr><th>Ticket Type</th><th>Weekday (Mon-Thu)</th><th>Weekend (Fri-Sun)</th><th>Family Pack (4 Person)</th></tr>
+<tr><td>Adult (12+)</td><td>Rs. 1,000</td><td>Rs. 1,500</td><td>Rs. 3,500</td></tr>
+<tr><td>Kids (3-12)</td><td>Rs. 700</td><td>Rs. 1,000</td><td>Included</td></tr>
+<tr><td>Combo (Park + Water World)</td><td>Rs. 1,800</td><td>Rs. 2,200</td><td>Rs. 6,000</td></tr>
+<tr class="highlight"><td colspan="4">Family Pack = 2 Adult + 2 Kids | Weekend par Rush Zyada Hota Hai</td></tr>
+</table>
+</div>
+<div style="text-align:center;margin-top:25px">
+<button class="btn" onclick="openM('book')">Online Book Now</button>
+<button class="btn btn-yellow" onclick="openM('acc')">Create Account</button>
+</div>
+</section>
+
+<section class="section" id="gallery">
+<h2 class="title">Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee5">
+<img src="https://images.unsplash.com/photo-1505993597083-3bd19fb75e57">
+<img src="https://images.unsplash.com/photo-1526376043067-5af36c35cd6c">
+<img src="https://images.unsplash.com/photo-1530549387789-4c1017266635">
+<img src="https://images.unsplash.com/photo-1575783970733-1aaedde1db74">
+<img src="https://images.unsplash.com/photo-1513889961551-628c1e5e2ee5">
+</div>
+</section>
+
+<section class="section" id="about" style="background:#fff">
+<h2 class="title">About Us, Disclaimer & Sitemap</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;text-align:left;margin-top:20px">
+<div><h3>About Us</h3><p>Merciado Amusement Park is now prime focus of city and nation. Made by Seth groups, 5 years development on 45 acre land. Nation's pride.</p><br>
+<h3>Disclaimer</h3><p>This website is created for Aptech E-Project purpose only. All images, prices and data are dummy for educational use.</p></div>
+<div><h3>Sitemap</h3><p><a href="#home">Home</a> > <a href="#zones">Different Zones</a> > Attractions > Restaurants > Entertainment > <a href="#tickets">Tickets & Prices</a> > <a href="#gallery">Gallery</a> > <a href="#contact">Contact Us</a> > About Us > Disclaimer</p><br>
+<h3>Contact</h3><p>Email: info@merciado.pk<br>Phone: 021-12345678<br>Location: Main Highway, Karachi - 45 Acre</p></div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2 class="title">Contact Us</h2>
+<div class="form-box">
+<input placeholder="Your Name">
+<input placeholder="Your Email">
+<textarea rows="4" placeholder="Your Message"></textarea>
+<button class="btn" style="width:100%" onclick="alert('Message Sent!')">Send Message</button>
+</div>
+</section>
+
+<footer>
+<div class="foot">
+<div><h3>MERCIADO PARK</h3><p>Seth Group of Companies</p></div>
+<div><b>Quick Links</b><br><a href="#home">Home</a><br><a href="#zones">Zones</a><br><a href="#tickets">Tickets</a></div>
+<div><b>Support</b><br><a href="#gallery">Gallery</a><br><a href="#contact">Contact</a><br>Disclaimer</div>
+</div>
+<p style="text-align:center;margin-top:25px;border-top:1px solid #ffffff22;padding-top:15px">© 2026 Merciado Park - Aptech E-Project by Student</p>
+</footer>
+
+<!-- Modals -->
+<div class="modal" id="acc"><div class="modal-box"><span class="close" onclick="closeM('acc')">&times;</span><h3>Create Account</h3><input placeholder="Full Name" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc"><input placeholder="Email" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc"><input type="password" placeholder="Password" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc"><button class="btn" style="width:100%" onclick="alert('Account Created Successfully!');closeM('acc')">Sign Up</button></div></div>
+
+<div class="modal" id="book"><div class="modal-box"><span class="close" onclick="closeM('book')">&times;</span><h3>Dummy Ticket Booking</h3><select style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc"><option>Weekday</option><option>Weekend</option><option>Family Pack</option></select><input type="number" placeholder="No. of Tickets" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc"><input type="date" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc"><button class="btn" style="width:100%" onclick="alert('Ticket Booked! ID: MP-'+Math.floor(Math.random()*90000)+' - Dummy Procedure');closeM('book')">Confirm Booking</button></div></div>
+
+<script>
+function openM(id){document.getElementById(id).classList.add('active')}
+function closeM(id){document.getElementById(id).classList.remove('active')}
+</script>
+</body>
+</html>

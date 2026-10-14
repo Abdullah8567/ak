@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.4);
+        }
+
+        button {
+            grid-column: span 2;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #5568d8;
+            transform: translateY(-2px);
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 14px;
+            text-transform: capitalize;
+        }
+
+        td {
+            padding: 13px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            color: #444;
+        }
+
+        tr:nth-child(even) {
+            background: #f7f8ff;
+        }
+
+        tr:hover {
+            background: #eef0ff;
+        }
+
+        @media (max-width: 600px) {
+            .form {
+                grid-template-columns: 1fr;
+            }
+
+            button {
+                grid-column: span 1;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            th, td {
+                padding: 10px 6px;
+                font-size: 13px;
+            }
+        }
+    </style>
+<body>
+    <input type="text" id="id" placeholder="id">
+    <input type="text" id="fname" placeholder="full name">
+    <input type="text" id="age" placeholder="age">
+    <input type="text" id="city" placeholder="city">
+    <input type="text" id="email" placeholder="email">
+    <button onclick="tudum()">submit</button>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <table border="" id="table">
+        <tr>
+            <th colspan="5">student Data</th>
+        </tr>
+        <tr>
+            <td>id</tdh>
+            <td>full name</td>
+            <td>age</td>
+            <td>city</td>
+            <td>email</td>
+        </tr>
+    </table>
+
+
+    <script>
+        function tudum() {
+            let id = document.getElementById("id").value
+            let fname = document.getElementById("fname").value
+            let age = document.getElementById("age").value
+            let city = document.getElementById("city").value
+            let email = document.getElementById("email").value
+            document.getElementById("table").innerHTML += "<tr><td>" + id + "</td><td>" + fname + "</td><td>" + age + "</td><td>" + city + "</td><td>" + email + "</td></tr>";
+            document.getElementById("id").value = "";
+            document.getElementById("fname").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("city").value = "";
+            document.getElementById("email").value = "";
+        }
+    </script>
+</body>
+
+</html>

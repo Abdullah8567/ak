@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: rgb(215, 209, 209);
+        }
+        .cards{
+            display: grid ;
+            grid-template-columns: repeat(4, 200px);
+            gap: 9px;
+        }
+        .card{
+            background-color: rgb(93, 152, 205);
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+        }
+        button{
+              background-color: rgb(20, 75, 123);
+              color: white;
+        }
+        @media(max-width: 930px){
+            .cards{
+                grid-template-columns: repeat(3, 200px);
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>Cards</h1>
+    <div class="cards">
+        <div class="card">
+            <img src="Rolex.webp" alt="" height="100">
+            <h2>Watch</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit pariatur veritatis esse at. Sit, optio.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="Rolex.webp" alt="" height="100">
+            <h2>Watch</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit pariatur veritatis esse at. Sit, optio.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="Rolex.webp" alt="" height="100">
+            <h2>Watch</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit pariatur veritatis esse at. Sit, optio.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="Rolex.webp" alt="" height="100">
+            <h2>Watch</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit pariatur veritatis esse at. Sit, optio.</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+</body>
+</html>

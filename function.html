@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="ak()" id="kuchbhi">click</button> -->
+
+    <input type="text" id="rrr1" placeholder="username">
+    <input type="number" id="rrr2" placeholder="password">
+    <br>
+    <button onclick="ak()" id="kuchbhi">login</button>
+    <div id="result"></div>
+    <script>
+        function ak(){
+            let rrr1 = document.getElementById("rrr1").value 
+            let rrr2 = document.getElementById("rrr2").value
+
+            document.getElementById("result").innerHTML = "username" + rrr1  + "<br>password" + rrr2 
+
+
+            document.getElementById("kuchbhi").innerHTML = "log out"
+            document.getElementById("kuchbhi").style.backgroundColor = "black"
+            document.getElementById("kuchbhi").style.color = "white"
+        }
+    </script>
+</body>
+</html>

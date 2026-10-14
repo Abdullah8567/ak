@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="akm"></div>
+
+    <script> 
+    function digitalclock(){
+        let time = new Date;
+        let hour = time.getHours()
+        let minutes = time.getMinutes()
+        let second = time.getSeconds()
+        let ampm;
+
+        if(second < 10){
+            second = "0" + second
+        }
+         if(minutes < 10){
+            minutes = "0" + minutes
+        } if(hour < 10){
+            hour = "0" + hour 
+        }
+        if(hour > 12){
+            ampm = " PM"
+        }
+        else{
+            ampm = " AM"
+        }
+        document.getElementById("akm").innerHTML = hour + ":" + minutes + ":" + second + ";" + ampm;
+    }
+    setInterval(digitalclock, 1000)
+    </script>
+</body>
+</html>

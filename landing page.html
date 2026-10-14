@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLANDER Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Header */
+    header {
+      height: 70px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      width: 1010px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: #111;
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .logo-icon {
+      width: 23px;
+      height: 23px;
+      margin-right: 7px;
+      background: #18b9a2;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 15px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #555;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 549px;
+      background: #18b9a2;
+
+    }
+
+    .hero-inner {
+      width: 1010px;
+      margin: auto;
+      padding-top: 98px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    /* Left content */
+    .content {
+      width: 440px;
+    }
+
+    .content h1 {
+      font-size: 56px;
+      line-height: 1.08;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 29px;
+    }
+
+    .divider {
+      width: 440px;
+      height: 1px;
+      background: rgba(255,255,255,0.85);
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 600;
+      margin-bottom: 39px;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .buy-btn {
+      width: 185px;
+      height: 58px;
+      border: none;
+      border-radius: 7px;
+      background: #fff;
+      color: #13b7a0;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .learn-btn {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* Form */
+    .form-box {
+      width: 490px;
+      min-height: 313px;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-radius: 11px;
+      padding: 25px 20px;
+    }
+
+    .name-row {
+      display: flex;
+      gap: 30px;
+    }
+
+    input {
+      height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+      padding: 0 12px;
+      font-size: 14px;
+      color: #555;
+      outline: none;
+    }
+
+    .name-row input {
+      width: 50%;
+    }
+
+    .full-input {
+      width: 100%;
+      margin-top: 18px;
+    }
+
+    .terms {
+      margin-top: 18px;
+      margin-left: 33px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .terms a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .submit-btn {
+      margin-top: 27px;
+      width: 105px;
+      height: 38px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+      color: #222;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 1050px) {
+      .header-inner,
+      .hero-inner {
+        width: 90%;
+      }
+
+      .hero-inner {
+        gap: 40px;
+      }
+
+      .content {
+        width: 45%;
+      }
+
+      .divider {
+        width: 100%;
+      }
+
+      .form-box {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        height: auto;
+        padding: 20px 0;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .hero-inner {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        flex-direction: column;
+      }
+
+      .content,
+      .form-box {
+        width: 100%;
+      }
+
+      .content h1 {
+        font-size: 44px;
+      }
+
+      .name-row {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .name-row input {
+        width: 100%;
+      }
+
+      nav {
+        gap: 20px;
+      }
+    }
+    .second{
+      color: black;
+      padding: 80px 170px;
+      text-align: center;
+    }
+    .second h1{
+      font-weight: 100;
+
+    }
+    .second button{
+      background-color: rgb(5, 172, 238);
+      height: 45px;
+      width: 250px;
+      font-size: 18px;
+    }.third{
+      padding: 80px 170px;
+      display: flex;
+      text-align: center;
+      background-color: rgb(26, 197, 197);
+      color: white;
+       
+    }
+    .third .border{
+      height: 80px;
+      width: 80px;
+      border: 1px solid white;
+      border-radius: 50%;
+      margin-left: 60px;
+    }
+    .border i{
+      margin-top: 22px;
+    }
+    .fourth{
+      padding: 80px 170px;
+      text-align: center;
+      
+    }
+    .fourth image{
+      display: flex;
+    }
+    .fourth h1{
+      font-weight: 100;
+    }
+    .fifth{
+       padding: 80px 170px;
+      display: flex;
+      /* text-align: center; */
+      background-color: rgb(74, 218, 124);
+      color: white;
+      /* display: flex; */
+    }
+      .fifth hr{
+        border: 2px solid white;
+        width: 50%;
+      }
+      .fifth h1{
+        font-weight: 100;
+      }
+      .six{
+         padding: 80px 170px;
+         margin: auto;
+         display: flex;
+      }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">✎</span>
+        SLANDER
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-inner">
+
+      <section class="content">
+        <h1>SLANDER<br>LANDING PAGE</h1>
+
+        <div class="subtitle">
+          Smart bootstrap landing theme
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          quis elit nec sem laoreet tempor sit amet a quam. Maecenas
+          commodo lorem ac turpis ornare lacinia.
+        </p>
+
+        <div class="buttons">
+          <button class="buy-btn">▣&nbsp; BUY NOW</button>
+          <a class="learn-btn" href="#">⊙ LEARN MORE</a>
+        </div>
+      </section>
+
+      <section class="form-box">
+        <form>
+          <div class="name-row">
+            <input type="text" placeholder="First name">
+            <input type="text" placeholder="Last name">
+          </div>
+
+          <input
+            class="full-input"
+            type="email"
+            placeholder="Email Address"
+          >
+
+          <input
+            class="full-input"
+            type="tel"
+            placeholder="Phone No."
+          >
+
+          <div class="terms">
+           <input type="checkbox" name="I've read the terms and condition"> I've read the
+            <a href="#">terms and conditions</a>
+          </div>
+
+          <button class="submit-btn" type="submit">
+            SUBMIT
+          </button>
+        </form>
+      </section>
+
+    </div>
+  </main>
+  <div class="second">
+    <h1>A Clean & Simple landing page for all type of websites</h1>
+    <p>Nullam quis elementum ligula. Sed neque neque, molestie eget nulla eu, hendrerit tincidunt magna. <br> Aliquam molestie lorem sed metus ornare luctus. Cras vel lectus libero.</p>
+    <br>
+    <button>scroll for more</button>
+    </div>
+    <div class="third">
+      <div class="card">
+          <div class="border"><i class="fa-solid fa-desktop fa-2x"></i></div>
+          <h2>Responsive Design</h2>
+          <br>
+          <p>Sed dolor nisl, blandit nec lacus dignissim, sollicitudin elementum erat. Nulla viverra massa vitae diam aliquam ullamcorper.</p>
+      </div>
+       <div class="card">
+          <div class="border"><i class="fa-solid fa-desktop fa-2x"></i></div>
+          <h2>Responsive Design</h2>
+          <br>
+          <p>Sed dolor nisl, blandit nec lacus dignissim, sollicitudin elementum erat. Nulla viverra massa vitae diam aliquam ullamcorper.</p>
+      </div> <div class="card">
+          <div class="border"><i class="fa-solid fa-desktop fa-2x"></i></div>
+          <h2>Responsive Design</h2>
+          <br>
+          <p>Sed dolor nisl, blandit nec lacus dignissim, sollicitudin elementum erat. Nulla viverra massa vitae diam aliquam ullamcorper.</p>
+      </div> <div class="card">
+          <div class="border"><i class="fa-solid fa-desktop fa-2x"></i></div>
+          <h2>Responsive Design</h2>
+          <br>
+          <p>Sed dolor nisl, blandit nec lacus dignissim, sollicitudin elementum erat. Nulla viverra massa vitae diam aliquam ullamcorper.</p>
+      </div>
+    </div>
+    <div class="fourth">
+      <h1>Screenshots of the app</h1>
+      <br>
+      <img src="1.jpg" alt="JPG" height="200">
+      <img src="2.jpg" alt="JPG" height="200">
+      <img src="3.jpg" alt="JPG" height="200">
+      <img src="1.jpg" alt="JPG" height="200">
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="fifth">
+      <div class="p1">
+        <hr> 
+        <br>
+        <br>
+        <h1>Resposive design for <br> all devices</h1>
+        <br>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac facilisis ante. Praesent gravida tempus suscipit. Praesent vel sem id ligula malesuada vehicula at id orci. In sem quam, semper id fringilla sed, sodales a ante. Ut molestie a lorem in luctus. Suspendisse dignissim leo quis purus mollis fermentum.</p>
+      </div>
+      <div class="p2">
+        <img src="https://theme.express/slander/sland1/demo/2.jpg" alt="" height="300px">
+      </div>
+    </div>
+    <div class="six">
+      <div class="p1"><img src="1.png" alt="png" height="450px"></div>
+      <div class="p2">
+       <BR></BR><Br></Br> <h1>Iphone Version</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Etiam placerat nunc ut tellus tristique, non posuere neque iaculis. Fusce aliquet dui ut felis rhoncus, vitae molestie mauris auctor. Donec pellentesque feugiat leo a adipiscing. Pellentesque quis tristique eros, sed rutrum mauris.</p>
+        <button class="fa-brands fa-apple">DOWNLOAD NOW</button>
+        </div>
+      </div>
+      <div class="seven">
+        <div class="p1">
+          <img src="5.jpg" alt="jpg" height="400px">
+        </div>
+        <div class="p2">
+          <hr>
+          <h1>Cross browser ipsum <br> compatible</h1>
+          <p>
+Cross browser ipsum
+compatible
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac facilisis ante. Praesent gravida tempus suscipit. Praesent vel sem id ligula malesuada vehicula at id orci. In sem quam, semper id fringilla sed, sodales a ante. Ut molestie a lorem in luctus.</p>
+        </div>
+      </div>
+      <div class="eight">
+        <div class="p1">
+          <h1>Our Team</h1>
+          <h3>Our people behind us</h3>
+        </div>
+        <div class="p2">
+          <img src="1 (1).jpg" alt="jpg">
+        </div>
+      </div>
+    
+</body>
+</html>
